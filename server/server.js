@@ -6,8 +6,7 @@ import { connectDB } from "./lib/db.js";
 import userRouter from "./routes/userRoutes.js";
 import messageRouter from "./routes/messageRoutes.js";
 import { Server } from "socket.io";
-import { Socket } from "dgram";
-import { use } from "react";
+
 
 //Create Express app and Http Server
 const app = express();
@@ -24,7 +23,7 @@ export const userSocketMap = {};
 
 //Socket.io connection handler
 io.on("connection", (socket)=>{
-    const userID= Socket.handshake.query.userID;
+    const userID= socket.handshake.query.userID;
     console.log("User Connected", userID);
 
     if(userID) userSocketMap[userID] = socket.id

@@ -4,7 +4,7 @@ const UserSchema = new mongoose.Schema({
     email: {type: String, required: true, unique: true},
     password: {type: String, required: true, minlength: 6},
     fullName: {type: String, required: true},
-    profilePic : {type: Str, default: ""},
+    profilePic : {type: String, default: ""},
     bio: {type: String},
 }, {timestamps: true});
 
