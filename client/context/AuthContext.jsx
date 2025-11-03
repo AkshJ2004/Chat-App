@@ -81,8 +81,8 @@ const checkAuth = async() =>{
         });
         newSocket.connect();
         setSocket(newSocket);
-        newSocket.on("getOnlineUsers",(usersId)=>{
-            setOnlineUsers(usersId);
+        newSocket.on("getOnlineUsers",(userIds)=>{
+            setOnlineUsers(userIds);
         })
     }
 
