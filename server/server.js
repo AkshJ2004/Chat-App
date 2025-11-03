@@ -23,7 +23,7 @@ export const userSocketMap = {};
 
 //Socket.io connection handler
 io.on("connection", (socket)=>{
-    const userID= socket.handshake.query.userID;
+    const userID= socket.handshake.query.userId;
     console.log("User Connected", userID);
 
     if(userID) userSocketMap[userID] = socket.id
